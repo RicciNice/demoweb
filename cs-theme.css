@@ -129,3 +129,9 @@ html{scroll-snap-type:y proximity}
 #players .pc:focus-visible{outline:0}
 #players .parrows{padding:18px 5vw 0}
 @media(max-width:700px){#players .ptrack{--w:64vw;--s:44px}#players .pc .num{font-size:84px}}
+
+/* Facebook video as muted hero background (cover-fit 16:9) */
+.hfb{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:var(--bg)}
+.hfb iframe{position:absolute;top:50%;left:50%;width:max(100vw,177.78vh);height:max(56.25vw,100vh);min-width:100%;min-height:100%;transform:translate(-50%,-50%) scale(1.08);border:0;pointer-events:none}
+/* player photos start below the name so faces are not covered */
+#players .pph img{top:24%;height:76%;object-position:top center;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%);mask-image:linear-gradient(180deg,transparent 0,#000 12%)}
