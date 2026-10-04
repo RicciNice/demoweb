@@ -1,0 +1,131 @@
+/* Counter-Strike.net inspired layer. Same navy + gold palette, new look. Delete this file + its <link> to go back. */
+:root{--bg:#050b1c;--panel:#0b1531;--line:#1b2a52}
+html{scroll-padding-top:100px}
+body{background:var(--bg);counter-reset:s}
+.clip,.btn,.tb-btn,.close,.more,.mp-btn{clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px))}
+.btn{letter-spacing:.12em;font-size:18px;padding:14px 32px}
+.btn.ghost{background:rgba(255,255,255,.06);color:#fff;border:0;box-shadow:inset 0 0 0 2px rgba(255,255,255,.7);padding:14px 32px}
+.btn.ghost:hover{background:var(--gold);color:var(--navy);box-shadow:none}
+
+/* header: slim, dark, glassy */
+header{position:fixed;left:0;right:0;top:0;background:rgba(5,11,28,.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.tb{background:transparent;padding:6px 5vw;border-bottom:1px solid var(--line)}
+.pill{background:transparent;border:0;padding:0;font:600 13px 'Barlow Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#cfd8f0}
+.tb-r{font:600 13px 'Barlow Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.tb-btn{padding:8px 18px;font-size:14px;letter-spacing:.12em}
+.nb{background:transparent;min-height:68px;padding:0 5vw}
+.brand{width:56px;margin:0;filter:none}
+.nb nav a{color:#cfd8f0;font:600 15px 'Barlow Condensed',sans-serif;letter-spacing:.18em;padding:24px 0;border-bottom:2px solid transparent}
+.nb nav a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.stripe{height:2px;background:linear-gradient(90deg,var(--gold) 0 140px,transparent 140px)}
+@media(max-width:900px){.nb nav{flex-direction:row;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.nb nav span{flex-wrap:nowrap;gap:18px;white-space:nowrap}.nb nav a{padding:20px 0;font-size:14px}.brand{width:44px}.tb-r a:not(.tb-btn){display:none}}
+
+/* hero: full-bleed, text bottom-left */
+.hero{min-height:100vh;background:var(--bg)}
+.hero::after{background:linear-gradient(90deg,rgba(5,11,28,.92),rgba(5,11,28,.25) 65%),linear-gradient(180deg,rgba(5,11,28,.55),transparent 30%,var(--bg))}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 4px)}
+.hcon{padding:0 5vw 14vh;max-width:1200px}
+.eyebrow{background:transparent;color:var(--gold);padding:0;letter-spacing:.34em;font-size:15px;border-left:3px solid var(--gold);padding-left:12px}
+.hero h1{font-size:clamp(52px,11vw,170px);letter-spacing:.01em}
+.hero h1 em{border-left:0;padding-left:0;letter-spacing:.3em;font-size:.26em;color:#cfd8f0}
+.hero p{color:#cfd8f0}
+
+/* sections: dark panels, numbered eyebrows */
+section{padding:110px 5vw;position:relative}
+section h2{font-size:clamp(40px,6vw,84px);letter-spacing:.02em}
+section h2::before{counter-increment:s;content:"// 0" counter(s);display:block;font:600 14px 'Barlow Condensed',sans-serif;letter-spacing:.34em;color:var(--gold);margin-bottom:14px}
+section h2::after{width:56px;height:4px;margin-top:18px}
+.bgn{background:radial-gradient(ellipse at 100% 0,rgba(242,183,5,.1),transparent 50%),var(--bg);border-top:1px solid var(--line)}
+.bgn .mute,.mute{color:#9fb0d8}
+#videos.bgg{background:linear-gradient(180deg,#08122b,var(--bg));color:#fff;border:0;border-top:1px solid var(--line)}
+#videos h2{color:#fff}#videos h2::before{color:var(--gold)}#videos h2::after{background:var(--gold)}#videos .mute{color:#9fb0d8}
+#videos .btn,#videos .parrows button{background:#0e1a3b;color:#fff}
+#academy.bgg{background:linear-gradient(135deg,transparent 0 70%,rgba(5,11,28,.12) 70% 100%),var(--gold);border:0}
+#academy h2::before{color:var(--navy)}
+#academy .mute{color:#2b2406;font-size:19px}
+#academy .btn{background:var(--navy);color:var(--gold)}#academy .btn:hover{background:#fff;color:var(--navy)}
+
+/* cards */
+.person{background:linear-gradient(180deg,#0e1a3b,#091329);border:1px solid var(--line);border-top:3px solid var(--gold);color:#fff;clip-path:polygon(0 0,100% 0,100% calc(100% - 20px),calc(100% - 20px) 100%,0 100%);transition:border-color .3s}
+.person:hover{border-color:var(--gold)}
+.person h3{color:#fff;letter-spacing:.02em}
+.person .role{color:var(--gold);text-transform:uppercase;letter-spacing:.1em;font-size:13px}
+.person p{color:#b6c1de}
+.photo img{transition:transform .6s ease}.person:hover .photo img{transform:scale(1.06)}
+
+/* videos */
+.vid{border:1px solid var(--line);box-shadow:none!important;transition:border-color .3s}
+.vid:hover{border-color:var(--gold)}
+.vbtn small{letter-spacing:.14em;text-transform:uppercase;font:700 13px 'Barlow Condensed',sans-serif}
+
+/* players */
+.pbox{background:var(--panel);border:1px solid var(--line);border-radius:0;box-shadow:none}
+.phead{background:transparent;color:#fff;font-size:38px;letter-spacing:.04em;border-bottom:1px solid var(--line);padding:22px 30px}
+.phead::before{content:"// ";color:var(--gold)}
+.pc{background:#0e1a3b}
+.pc .num{color:var(--gold);-webkit-text-stroke:2px var(--bg)}
+.pname{background:rgba(5,11,28,.92);color:#fff}.pname small{color:#9fb0d8}
+.pc:hover .pname,.pc:focus-visible .pname{background:var(--gold);color:var(--navy);border-bottom-color:var(--gold)}
+.pc:hover .pname small{color:var(--navy)}
+.parrows button{background:#0e1a3b;border-color:var(--line);color:#fff;border-radius:0}.parrows button:hover{background:var(--gold);color:var(--navy)}
+.pcard{background:var(--panel);border:1px solid var(--line);border-bottom:4px solid var(--gold)}
+
+/* partners + footer */
+.mp{background:#040918;border-top:1px solid var(--line)}
+.mp-btn{background:var(--gold);color:var(--navy);letter-spacing:.1em}.mp-btn:hover{background:#fff}
+footer{background:#040918;border-top:1px solid var(--line)}
+footer h2{font-size:clamp(36px,5vw,64px)}
+footer h2::before{content:"// Contact";display:block;font:600 14px 'Barlow Condensed',sans-serif;letter-spacing:.34em;color:var(--gold);margin-bottom:14px}
+
+/* ===== scroll feel (counter-strike.net style) ===== */
+html{scroll-snap-type:y proximity}
+.hero,section,footer{scroll-snap-align:start}
+.hbg{transform:scale(1.12);will-change:transform}
+.hcon,.scrollcue{will-change:transform,opacity}
+.js section h2.rv{clip-path:inset(0 100% 0 0);transform:none;transition:clip-path .9s cubic-bezier(.2,.7,.2,1),opacity .6s}
+.js section h2.rv.in{clip-path:inset(0 0 0 0)}
+.js .rv{transition-duration:.9s;transition-timing-function:cubic-bezier(.2,.7,.2,1)}
+.js .person.rv{transform:translateY(60px) scale(.96)}.js .person.rv.in{transform:none}
+.dots{position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:12;display:flex;flex-direction:column;gap:14px}
+.dots a{display:block;width:4px;height:22px;background:rgba(255,255,255,.28);transition:all .35s}
+.dots a:hover{background:#fff}.dots a.on{height:44px;background:var(--gold)}
+@media(max-width:900px){.dots{display:none}}
+
+/* ===== highlight videos: featured stage + side clips ===== */
+#videos .videos{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:16px;overflow:visible}
+#videos .vid{flex:none;aspect-ratio:auto;height:100%;min-height:150px}
+#videos .vid:first-child{grid-row:1 / span 2;aspect-ratio:16/9}
+#videos .vid::before{content:attr(data-title);position:absolute;right:16px;bottom:12px;z-index:3;pointer-events:none;font:800 22px 'Barlow Condensed',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#fff;text-shadow:0 2px 10px #000}
+#videos .vid:first-child::before{font-size:34px;right:auto;left:22px;bottom:56px;color:var(--gold)}
+#videos .vid:first-child .vbtn small{left:22px;bottom:18px;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%)}
+#videos .vid:not(:first-child) .vbtn small{display:none}
+#videos .vid:not(:first-child) .play{transform:scale(.6)}
+#videos .vid:first-child .play{transform:scale(1.25)}
+#videos .vid:hover video,#videos .vid:hover .thumb{transform:scale(1.05)}
+#videos .vid video,#videos .vid .thumb{transition:transform .8s ease}
+#videos .vid{overflow:hidden}
+.varrows{display:none}
+@media(max-width:800px){#videos .videos{grid-template-columns:1fr;grid-template-rows:none}#videos .vid:first-child{grid-row:auto}#videos .vid:not(:first-child){aspect-ratio:16/9;height:auto}}
+@media(prefers-reduced-motion:reduce){html{scroll-snap-type:none}.hbg{transform:none}}
+
+/* ===== players: tall slanted panels (Riot Games style) ===== */
+#players{padding:90px 0 40px}
+#players .pbox{max-width:none;border:0;background:transparent}
+#players .phead{padding:0 5vw 26px;border:0;font-size:clamp(40px,6vw,84px)}
+#players .pbody{padding:0}
+#players .ptrack{--w:clamp(250px,22vw,400px);--s:80px;gap:0;padding:0;cursor:grab}
+#players .pc{flex:0 0 var(--w);aspect-ratio:auto;height:clamp(480px,78vh,720px);margin-left:calc(var(--s) * -.62);background:#0e1a3b;clip-path:polygon(var(--s) 0,100% 0,calc(100% - var(--s)) 100%,0 100%);transition:flex-basis .45s cubic-bezier(.2,.7,.2,1)}
+#players .pc:first-child{margin-left:0}
+@media(hover:hover){#players .pc:hover{flex-basis:calc(var(--w) + 80px)}}
+#players .pph{background:linear-gradient(180deg,#1b3270,#0a1836);transition:transform .6s ease}
+#players .pph::before{content:"";position:absolute;left:50%;bottom:0;width:70%;height:62%;transform:translateX(-50%);background:radial-gradient(ellipse at 50% 22%,#0a1836 0 22%,transparent 23%),radial-gradient(ellipse at 50% 100%,#0a1836 0 58%,transparent 59%);opacity:.8}
+#players .pph img{object-position:top center}
+#players .pc:hover .pph{transform:scale(1.06)}
+#players .pc::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(5,11,28,.8),transparent 38%,transparent 55%,rgba(5,11,28,.9))}
+#players .pname,#players .pc:hover .pname,#players .pc:focus-visible .pname{z-index:2;top:9%;bottom:auto;left:var(--s);right:var(--s);text-align:center;background:none;border:0;padding:0;color:#fff;font:800 clamp(28px,2.6vw,44px)/.9 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.02em;text-shadow:0 3px 14px rgba(0,0,0,.6)}
+#players .pname small,#players .pc:hover .pname small{margin-top:12px;font:700 13px 'Barlow Condensed',sans-serif;letter-spacing:.18em;color:var(--gold)}
+#players .pc .num{z-index:2;top:auto;bottom:18px;right:auto;left:calc(var(--s) + 6px);font-size:110px;line-height:.8;color:transparent;-webkit-text-stroke:2px var(--gold);transition:color .3s}
+#players .pc:hover .num{color:var(--gold)}
+#players .pc:focus-visible{outline:0}
+#players .parrows{padding:18px 5vw 0}
+@media(max-width:700px){#players .ptrack{--w:64vw;--s:44px}#players .pc .num{font-size:84px}}
