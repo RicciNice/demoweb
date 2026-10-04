@@ -125,3 +125,21 @@
 .valo-in h2::before,.valo-in h2::after{display:none!important}
 .valo-in p{max-width:56ch;color:#c4cee8;margin:0 0 36px;font-size:19px}
 @media(max-width:700px){.valo{min-height:90vh}.valo-btn{padding:20px 36px;font-size:18px}}
+
+/* ===== highlight banner: Golden = gold, State = blue; blue button ===== */
+.valo-t b{font:inherit;color:inherit}
+.valo-t .vg{color:var(--gold)}
+.valo-t .vb{color:#2f6bff;text-shadow:0 0 28px rgba(47,107,255,.55),0 6px 40px rgba(0,0,0,.6);-webkit-text-stroke:2px #fff}
+.valo-t i{display:block;font-style:normal;font-size:.3em;letter-spacing:.16em;line-height:1.1;margin-top:.25em;color:#f4f1ea}
+.valo-btn{position:relative;background:linear-gradient(135deg,#1e4fd8,#2f6bff 55%,#1639a8);color:#fff;outline:1px solid #7fb0ff;outline-offset:4px;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));box-shadow:0 0 24px rgba(47,107,255,.55);overflow:hidden}
+.valo-btn::before{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .6s}
+.valo-btn:hover::before,.valo-btn:focus-visible::before{left:120%}
+.valo-btn:hover,.valo-btn:focus-visible{background:linear-gradient(135deg,#2f6bff,#6aa0ff);color:#fff}
+.acad-crest{opacity:1;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 0 2px rgba(242,183,5,.5)}
+
+/* hero title: Goldenstate = gold, College = blue */
+.hero h1{color:var(--gold)!important}
+.hero h1 span{color:#2f6bff!important;text-shadow:0 0 30px rgba(47,107,255,.5),0 4px 30px rgba(0,0,0,.6)}
+.hero .hbg{background:var(--bg)}
+/* hero: no background video */
+.hero{background:radial-gradient(circle at 80% 20%,rgba(242,183,5,.18),transparent 45%),linear-gradient(115deg,#050b1c 0 60%,#0a1a44 100%)}
